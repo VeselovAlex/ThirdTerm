@@ -4,15 +4,19 @@
 #include <QObject>
 #include <cstdlib>
 #include "opsystem.h"
+#include <QDebug>
 
 class Computer : public QObject
 {
     Q_OBJECT
 public:
-    explicit Computer(QObject *parent = 0, OpSystem* os = NULL) : QObject(parent), osys(os), infection(false){}
+    explicit Computer(QObject *parent = 0, OpSystem* os = NULL) : QObject(parent), osys(os), infection(false)
+    {
+        qDebug() << "Created";
+    }
 
 signals:
-    bool infected(bool);
+    bool infected(Computer*);
     bool virus();
 public slots:
     void infect()
@@ -21,7 +25,8 @@ public slots:
         if (osys->probability() > rnd)
         {
             infection = true;
-            emit infected(true);
+            qDebug() << "infected";
+            emit infected(this);
         }
     }
 

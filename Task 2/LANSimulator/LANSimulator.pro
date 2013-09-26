@@ -13,12 +13,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        widget.cpp \
-    lan.cpp
+        widget.cpp
 
 HEADERS  += widget.h \
     computer.h \
     lan.h \
-    opsystem.h
+    opsystem.h \
+    wire.h
 
 FORMS    += widget.ui
