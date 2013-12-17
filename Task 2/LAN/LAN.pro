@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2013-09-15T15:34:17
+# Project created by QtCreator 2013-12-17T17:06:57
 #
 #-------------------------------------------------
 
@@ -8,17 +8,22 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = LANSimulator
+TARGET = LAN
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        widget.cpp
+    computer.cpp \
+    generator.cpp \
+    lan.cpp \
+    landisplay.cpp \
+    filedialog.cpp
 
-HEADERS  += widget.h \
+HEADERS  += \
     computer.h \
+    generator.h \
     lan.h \
-    opsystem.h \
-    wire.h
+    landisplay.h \
+    filedialog.h
 
-FORMS    += widget.ui
+FORMS    +=
