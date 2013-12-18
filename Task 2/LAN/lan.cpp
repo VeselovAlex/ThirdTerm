@@ -90,23 +90,31 @@ void LAN::loadDataFromFile(const QString &filename)
     std::ifstream stream;
     stream.open(filename.toStdString().data(), std::ios_base::in);
     if (!stream.is_open())
-        qt_assert("File Read Failed", "lan.cpp", 91);
+    {
+        emit errorWhileLoading("Файл недоступен.");
+        return;
+    }
 
     int averageCount = 0;
     stream >> averageCount;
-    qDebug() << averageCount;
     for (int i = 0; i < averageCount; i++)
     {
         int os = 0;
         stream >> os;
         if (os >= OS_COUNT)
-            qt_assert("File Read Failed", "lan.cpp", 99);
-        qDebug() << os;
+        {
+            emit errorWhileLoading("Некорректный формат файла");
+            return;
+        }
         addComputer((Computer::OS)os);
     }
     int firstInfIdx = 0;
     stream >> firstInfIdx;
-    qDebug() << firstInfIdx;
+    if (firstInfIdx <= 0 || firstInfIdx > averageCount)
+    {
+        emit errorWhileLoading("Некорректный формат файла");
+        return;
+    }
     int first = 0;
     int second = 0;
     while (stream.peek() != EOF)
@@ -115,7 +123,10 @@ void LAN::loadDataFromFile(const QString &filename)
         stream >> second;
         qDebug() << first << " " << second;
         if (first > m_cure.length() || second > m_cure.length())
-            qt_assert("File Read Failed", "lan.cpp", 109);
+        {
+            emit errorWhileLoading("Некорректный формат файла");
+            return;
+        }
 
         connectComputers(m_cure[first - 1], m_cure[second - 1]);
     }

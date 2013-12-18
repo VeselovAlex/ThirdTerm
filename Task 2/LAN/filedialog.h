@@ -18,6 +18,7 @@ public:
 
 signals:
     bool fileName(QString);
+    bool fileChosen(bool);
 
 public slots:
     void getFileName(QModelIndex idx);

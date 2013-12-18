@@ -40,6 +40,7 @@ void FileDialog::sendFileName()
 {
     if (path != "")
     {
+        emit fileChosen(true);
         emit fileName(path);
         this->close();
     }

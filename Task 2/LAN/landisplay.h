@@ -4,6 +4,7 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 #include <QPushButton>
+#include <QLabel>
 #include "lan.h"
 #include "generator.h"
 #include "filedialog.h"
@@ -26,8 +27,10 @@ private:
     FileDialog* dialog;
     QLineEdit* pathField;
     QPushButton* browseBtn;
+    QLabel* label;
 
     void loadLAN();
+    void reset();
 
 };
 

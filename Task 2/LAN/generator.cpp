@@ -14,7 +14,6 @@ void Generator::start()
 void Generator::stop()
 {
     m_state = Stopped;
-    m_first = NULL;
     impStop();
 }
 

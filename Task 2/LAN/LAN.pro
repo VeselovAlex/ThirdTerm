@@ -10,20 +10,22 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = LAN
 TEMPLATE = app
-
+CONFIG += qtestlib
 
 SOURCES += main.cpp\
     computer.cpp \
     generator.cpp \
     lan.cpp \
     landisplay.cpp \
-    filedialog.cpp
+    filedialog.cpp \
+    computertest.cpp \
+    lantest.cpp
 
 HEADERS  += \
     computer.h \
     generator.h \
     lan.h \
     landisplay.h \
-    filedialog.h
-
-FORMS    +=
+    filedialog.h \
+    computertest.h \
+    lantest.h
