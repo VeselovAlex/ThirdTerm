@@ -1,6 +1,5 @@
 #include "matrixFunctions.h"
 
-
 bool **transitionMatrix(bool **source, int dim)
 {
     assert(dim > 0);

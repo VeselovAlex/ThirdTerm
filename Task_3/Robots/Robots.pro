@@ -1,11 +1,15 @@
 TEMPLATE = app
 CONFIG += console
 CONFIG -= app_bundle
-CONFIG -= qt
+CONFIG += qtestlib
 
 SOURCES += main.cpp \
-    matrixFunctions.cpp
+    matrixFunctions.cpp \
+    test_robots.cpp \
+    robots.cpp
 
 HEADERS += \
-    matrixFunctions.h
+    matrixFunctions.h \
+    test_robots.h \
+    robots.h
 
