@@ -5,5 +5,7 @@ HEADERS += \
     arraynullcounter.h \
     testnullcounter.h
 
-SOURCES +=
+SOURCES += \
+    testnullcounter.cpp \
+    main.cpp
 

@@ -14,7 +14,7 @@ public:
      * @param size - capacity of the array
      * @return number of NULL elements
      */
-    int countNULLElems(T* array, int size)
+    int countNULLElems(T *array, int size)
     {
         int sum = 0;
         for (int i = 0; i < size; i++)
@@ -22,6 +22,7 @@ public:
                 sum++;
         return sum;
     }
+
     /**
      * @brief countNULLElems counting NULL elements in the matrix
      * @param array - pointer to matrix
@@ -41,3 +42,6 @@ public:
 };
 
 #endif // ARRAYNULLCOUNTER_H
+
+
+
